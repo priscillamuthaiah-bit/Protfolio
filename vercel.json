@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "routes": [
+    {
+      "src": "/api/send-email",
+      "dest": "/api/send-email.js",
+      "methods": ["POST", "OPTIONS"]
+    }
+  ]
+}
