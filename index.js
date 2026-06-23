@@ -29,7 +29,7 @@ window.addEventListener('mouseout', () => {
 });
 
 function drawMatrix() {
-    ctx.fillStyle = 'rgba(5, 5, 8, 0.12)';
+    ctx.fillStyle = 'rgba(5, 5, 8, 0.06)';
     ctx.fillRect(0, 0, width, height);
 
     ctx.font = fontSize + 'px monospace';
@@ -248,7 +248,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 comfortBtn.textContent = '[👁️ COMFORT: ON]';
                 // Stop matrix loop to save CPU and reduce visual movement
                 clearInterval(matrixInterval);
-                ctx.fillStyle = 'var(--bg-primary)';
+                ctx.fillStyle = '#050508';
                 ctx.fillRect(0, 0, width, height); // Clear code characters
             } else {
                 comfortBtn.textContent = '[👁️ COMFORT: OFF]';

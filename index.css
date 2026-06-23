@@ -77,7 +77,7 @@ body {
     width: 100vw;
     height: 100vh;
     z-index: -2;
-    opacity: 0.05; /* Toned down from 0.14 for reading comfort */
+    opacity: 0.1; /* Toned up slightly for visible motion */
     pointer-events: none;
 }
 
@@ -164,8 +164,7 @@ body {
 
 .pulse-green {
     background-color: var(--green-glow);
-    box-shadow: 0 0 8px var(--green-glow);
-    animation: pulse 2s infinite;
+    animation: pulse-green-ring 2s infinite;
 }
 
 .hud-logo {
@@ -589,6 +588,27 @@ body {
     box-shadow: var(--glow-green);
 }
 
+/* Moving Laser Scanning Beam */
+.cyber-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--cyan-glow), transparent);
+    animation: card-scan 8s infinite linear;
+    opacity: 0.25;
+    pointer-events: none;
+    z-index: 10;
+}
+
+@keyframes card-scan {
+    0% { top: 0%; }
+    50% { top: 100%; }
+    100% { top: 0%; }
+}
+
 /* Corner markers */
 .card-corner-top-left::before,
 .card-corner-top-left::after,
@@ -986,8 +1006,7 @@ body {
 
 .pulse-blue {
     background-color: var(--cyan-glow);
-    box-shadow: 0 0 6px var(--cyan-glow);
-    animation: pulse 1.5s infinite alternate;
+    animation: pulse-blue-ring 2s infinite;
 }
 
 .schematic-list {
@@ -1484,5 +1503,21 @@ body.comfort-mode .reveal-element {
     opacity: 1 !important;
     transform: translate(0) !important;
     filter: none !important;
+}
+
+body.comfort-mode .cyber-card::after {
+    display: none !important;
+}
+
+@keyframes pulse-green-ring {
+    0% { box-shadow: 0 0 0 0 rgba(0, 255, 157, 0.7); }
+    70% { box-shadow: 0 0 0 8px rgba(0, 255, 157, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(0, 255, 157, 0); }
+}
+
+@keyframes pulse-blue-ring {
+    0% { box-shadow: 0 0 0 0 rgba(0, 240, 255, 0.7); }
+    70% { box-shadow: 0 0 0 8px rgba(0, 240, 255, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(0, 240, 255, 0); }
 }
 
