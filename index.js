@@ -234,6 +234,29 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     });
+
+    // 5. Interactive Comfort Mode Toggle (Bypasses matrix rain and CRT overlays)
+    const comfortBtn = document.getElementById('comfort-mode-btn');
+    let comfortActive = false;
+
+    if (comfortBtn) {
+        comfortBtn.addEventListener('click', () => {
+            comfortActive = !comfortActive;
+            document.body.classList.toggle('comfort-mode', comfortActive);
+            
+            if (comfortActive) {
+                comfortBtn.textContent = '[👁️ COMFORT: ON]';
+                // Stop matrix loop to save CPU and reduce visual movement
+                clearInterval(matrixInterval);
+                ctx.fillStyle = 'var(--bg-primary)';
+                ctx.fillRect(0, 0, width, height); // Clear code characters
+            } else {
+                comfortBtn.textContent = '[👁️ COMFORT: OFF]';
+                // Restart matrix rain loop
+                matrixInterval = setInterval(drawMatrix, 35);
+            }
+        });
+    }
 });
 
 
