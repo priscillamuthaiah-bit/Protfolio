@@ -787,12 +787,12 @@ body {
 ------------------------------------------------------------- */
 .syslog-timeline {
     position: relative;
-    padding-left: 25px;
+    padding-left: 20px;
     border-left: 2px solid rgba(0, 240, 255, 0.15);
-    margin-left: 15px;
+    margin-left: 10px;
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: 15px; /* Compact gap from 30px */
 }
 
 .log-entry {
@@ -802,11 +802,11 @@ body {
 .log-entry::before {
     content: '';
     position: absolute;
-    width: 12px;
-    height: 12px;
+    width: 10px;
+    height: 10px;
     border-radius: 50%;
-    left: -32px;
-    top: 6px;
+    left: -26px;
+    top: 5px;
     background-color: var(--bg-primary);
     border: 2px solid var(--cyan-glow);
     z-index: 2;
@@ -821,20 +821,20 @@ body {
 
 .log-timestamp {
     font-family: var(--font-mono);
-    font-size: 0.82rem;
+    font-size: 0.8rem;
     font-weight: 700;
     color: var(--cyan-glow);
-    margin-bottom: 6px;
-    letter-spacing: 1px;
+    margin-bottom: 3px;
+    letter-spacing: 0.5px;
 }
 
 .log-status {
     font-family: var(--font-mono);
-    font-size: 0.72rem;
+    font-size: 0.68rem;
     font-weight: 700;
-    margin-bottom: 8px;
+    margin-bottom: 5px;
     display: inline-block;
-    padding: 2px 6px;
+    padding: 1px 5px;
     border: 1px solid currentColor;
     border-radius: 3px;
 }
@@ -845,69 +845,115 @@ body {
 .stat-debug { color: var(--text-secondary); }
 
 .log-details {
-    background: rgba(255, 255, 255, 0.015);
-    border: 1px solid rgba(255, 255, 255, 0.04);
-    padding: 16px 20px;
+    background: rgba(255, 255, 255, 0.012);
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    padding: 10px 14px; /* More compact padding */
     border-radius: 4px;
 }
 
 .log-title {
     font-family: var(--font-display);
-    font-size: 1.25rem;
+    font-size: 1.15rem;
     font-weight: 700;
     color: var(--text-primary);
 }
 
 .log-org {
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     color: var(--text-secondary);
     font-weight: 500;
     display: block;
-    margin-bottom: 8px;
+    margin-bottom: 4px;
 }
 
-.log-desc {
-    font-size: 0.9rem;
+.log-bullets {
+    margin-top: 6px;
+    padding-left: 15px;
+    list-style-type: square;
+}
+
+.log-bullets li {
+    font-size: 0.82rem;
     color: var(--text-secondary);
-    line-height: 1.5;
+    line-height: 1.4;
+    margin-bottom: 3px;
 }
 
-.log-desc strong {
-    color: var(--text-primary);
-}
-
-/* Education node spacing */
-.edu-node {
-    display: flex;
-    gap: 20px;
-    background: rgba(255, 255, 255, 0.015);
-    border: 1px solid rgba(0, 240, 255, 0.05);
-    padding: 20px;
-    border-radius: 4px;
-}
-
-.edu-icon {
-    font-size: 2rem;
-    line-height: 1.2;
-}
-
-.edu-details h4 {
-    font-family: var(--font-display);
-    font-size: 1.25rem;
-    font-weight: 700;
-    color: var(--text-primary);
-}
-
-.edu-meta {
-    font-family: var(--font-mono);
-    font-size: 0.8rem;
+.log-bullets li::marker {
     color: var(--cyan-glow);
-    display: block;
-    margin: 4px 0 8px 0;
 }
 
-.edu-desc {
-    font-size: 0.9rem;
+/* Compact Education Node */
+.edu-node-compact {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: rgba(0, 240, 255, 0.02);
+    border: 1px solid rgba(0, 240, 255, 0.08);
+    border-radius: 4px;
+    padding: 10px 12px;
+    margin-top: 15px;
+}
+
+.edu-node-compact .edu-icon {
+    font-size: 1.4rem;
+}
+
+.edu-node-compact .edu-info {
+    font-size: 0.8rem;
+    line-height: 1.35;
+}
+
+.edu-node-compact .edu-info strong {
+    display: block;
+    color: var(--text-primary);
+}
+
+.edu-node-compact .edu-info .edu-meta {
+    color: var(--text-secondary);
+}
+
+/* Mindset panel inside profile card */
+.mindset-panel {
+    margin-top: 16px;
+    border-top: 1px dashed rgba(0, 240, 255, 0.12);
+    padding-top: 12px;
+}
+
+.mindset-panel-title {
+    display: block;
+    font-size: 0.72rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+    letter-spacing: 0.5px;
+}
+
+.mindset-tags-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 6px;
+}
+
+.mindset-tag {
+    background: rgba(255, 255, 255, 0.015);
+    border: 1px solid rgba(0, 255, 157, 0.06);
+    border-radius: 3px;
+    padding: 5px 6px;
+    font-size: 0.72rem;
+    color: var(--text-secondary);
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    cursor: help;
+    transition: all 0.2s ease;
+}
+
+.mindset-tag:hover {
+    background: rgba(0, 255, 157, 0.05);
+    border-color: var(--green-glow);
+    color: var(--text-primary);
+}
+
     color: var(--text-secondary);
 }
 
