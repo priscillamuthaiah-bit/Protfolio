@@ -354,7 +354,7 @@ function executeCommand(cmdText) {
     const cleanedCmd = cmdText.trim();
     if (cleanedCmd === '') return;
 
-    printTerminalLine(`<span class="text-accent-cyan">priscilla@cybersec-port:~$</span> ${cleanedCmd}`);
+    printTerminalLine(`<span class="text-accent-cyan">priscilla:~$</span> ${cleanedCmd}`);
 
     const lowerCmd = cleanedCmd.toLowerCase();
 
@@ -387,7 +387,7 @@ function runWelcomeSequence() {
     }, 850);
 
     setTimeout(() => {
-        printTerminalLine(`<span class="text-accent-cyan">priscilla@cybersec-port:~$</span> <span class="typing-seq">cat about_me.md</span>`);
+        printTerminalLine(`<span class="text-accent-cyan">priscilla:~$</span> <span class="typing-seq">cat about_me.md</span>`);
     }, 1400);
 
     setTimeout(() => {

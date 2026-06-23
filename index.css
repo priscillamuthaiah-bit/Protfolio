@@ -38,7 +38,8 @@
 
 html {
     scroll-behavior: smooth;
-    /* Removed scroll snap for smooth arrow key navigation */
+    overflow-x: hidden;
+    width: 100%;
 }
 
 body {
@@ -48,6 +49,12 @@ body {
     overflow-x: hidden;
     line-height: 1.6;
     position: relative;
+    width: 100%;
+}
+
+.content-container {
+    width: 100%;
+    overflow-x: hidden;
 }
 
 /* Scrollbar Styling */
@@ -462,6 +469,7 @@ body {
     font-size: 0.95rem;
     height: 320px;
     overflow-y: auto;
+    overflow-x: hidden;
     color: #f1f1f1;
     background-image: linear-gradient(rgba(0, 240, 255, 0.02) 50%, transparent 50%);
     background-size: 100% 4px;
@@ -494,6 +502,8 @@ body {
     padding-left: 14px;
     margin: 6px 0 12px 0;
     white-space: pre-line;
+    word-break: break-word;
+    overflow-wrap: break-word;
 }
 
 .text-accent-green { color: var(--green-glow); }
@@ -519,6 +529,8 @@ body {
     font-family: var(--font-mono);
     font-size: 0.95rem;
     flex-grow: 1;
+    min-width: 0;
+    width: 100%;
     caret-color: var(--cyan-glow);
 }
 
@@ -1539,6 +1551,14 @@ body {
     
     .shortcut-btn {
         padding: 4px 8px;
+        font-size: 0.72rem;
+    }
+    
+    .terminal-stats {
+        display: none !important;
+    }
+    
+    .terminal-title {
         font-size: 0.72rem;
     }
 }
