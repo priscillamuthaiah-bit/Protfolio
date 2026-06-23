@@ -402,7 +402,7 @@ const contactForm = document.getElementById('secure-contact-form');
 const submitBtn = document.getElementById('form-submit-btn');
 
 // Configurable endpoint URL (Change to production URL when hosting online, e.g. on Render/Railway)
-const BACKEND_API_URL = 'https://priscillamuthaiah-portfolio-backend.onrender.com';
+const BACKEND_API_URL = 'https://priscillamuthaiah-portfolio-backend.onrender.com/api/send-email';
 
 contactForm.addEventListener('submit', (e) => {
     e.preventDefault();
