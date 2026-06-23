@@ -1433,9 +1433,12 @@ body {
     }
     
     .slide-section {
-        min-height: auto;
-        padding-top: 100px;
-        padding-bottom: 80px;
+        min-height: 100vh;
+        min-height: 100dvh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 90px 15px 40px 15px;
     }
     
     .slide-nav {
@@ -1445,8 +1448,8 @@ body {
 
 @media (max-width: 768px) {
     .glitch-title {
-        font-size: 3.2rem;
-        letter-spacing: 6px;
+        font-size: 2.8rem;
+        letter-spacing: 4px;
     }
     
     .grid-2-col {
@@ -1459,12 +1462,84 @@ body {
         gap: 15px;
     }
     
-    .hud-right, .hud-divider {
-        display: none;
+    .hud-left {
+        display: none !important;
+    }
+    
+    .hud-right {
+        display: flex !important;
+        align-items: center;
+        gap: 5px;
+    }
+    
+    .hud-right .hud-divider,
+    .hud-right #hud-clock {
+        display: none !important;
+    }
+    
+    .hud-container {
+        padding: 10px 15px;
+    }
+    
+    .hud-logo {
+        font-size: 1.05rem;
+        letter-spacing: 0.5px;
+    }
+    
+    .hud-btn {
+        padding: 4px 8px;
+        font-size: 0.72rem;
     }
     
     .components-grid {
         grid-template-columns: 1fr;
+    }
+    
+    .card-body {
+        padding: 16px;
+    }
+    
+    .card-header {
+        padding: 12px 16px;
+    }
+    
+    .schematic-list li {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        margin-bottom: 12px;
+    }
+    
+    .schematic-list li strong {
+        width: auto;
+        display: block;
+    }
+}
+
+@media (max-width: 480px) {
+    .glitch-title {
+        font-size: 2.0rem;
+        letter-spacing: 2px;
+    }
+    
+    .hero-subtitle {
+        font-size: 0.8rem;
+        letter-spacing: 1px;
+    }
+    
+    .terminal-body {
+        padding: 15px;
+        font-size: 0.85rem;
+    }
+    
+    .terminal-shortcuts {
+        padding: 8px 10px;
+        gap: 6px;
+    }
+    
+    .shortcut-btn {
+        padding: 4px 8px;
+        font-size: 0.72rem;
     }
 }
 
