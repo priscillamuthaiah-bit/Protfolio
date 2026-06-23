@@ -1469,8 +1469,13 @@ body {
 }
 
 /* -------------------------------------------------------------
-   COMFORT MODE OVERRIDES (Zero strain, high-readability)
+   COMFORT MODE OVERRIDES (Zero strain, light-mode reader theme)
 ------------------------------------------------------------- */
+body.comfort-mode {
+    background-color: #f4f6f9 !important;
+    color: #1e293b !important;
+}
+
 body.comfort-mode #matrix-canvas {
     display: none !important;
 }
@@ -1480,23 +1485,252 @@ body.comfort-mode .scanlines {
     display: none !important;
 }
 
+/* Header bar styling in comfort mode */
+body.comfort-mode .hud-header {
+    background-color: #ffffff !important;
+    border-bottom: 1px solid #e2e8f0 !important;
+}
+
+body.comfort-mode .hud-label,
+body.comfort-mode .hud-logo,
+body.comfort-mode .hud-clock {
+    color: #475569 !important;
+    text-shadow: none !important;
+}
+
 body.comfort-mode .text-glow-green,
 body.comfort-mode .text-glow-cyan {
+    color: #1d4ed8 !important; /* Royal blue links/accents */
     text-shadow: none !important;
+}
+
+body.comfort-mode .hud-btn {
+    border-color: #cbd5e1 !important;
+    color: #1d4ed8 !important;
+}
+body.comfort-mode .hud-btn:hover {
+    background: #f1f5f9 !important;
+    box-shadow: none !important;
+}
+
+/* Card overrides in comfort mode */
+body.comfort-mode .cyber-card {
+    background-color: #ffffff !important;
+    border: 1px solid #e2e8f0 !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05) !important;
 }
 
 body.comfort-mode .cyber-card:hover {
-    box-shadow: none !important;
-    transform: none !important;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08) !important;
+    transform: translateY(-2px) !important;
+    border-color: #1d4ed8 !important;
 }
 
-body.comfort-mode .glitch-title {
+body.comfort-mode .card-header {
+    border-bottom: 1px solid #f1f5f9 !important;
+}
+
+body.comfort-mode .card-header h3 {
+    color: #0f172a !important;
     text-shadow: none !important;
 }
 
-body.comfort-mode .glitch-title::before,
-body.comfort-mode .glitch-title::after {
+body.comfort-mode .card-dot-green {
+    background-color: #1d4ed8 !important;
+}
+
+body.comfort-mode .card-corner-top-left::before,
+body.comfort-mode .card-corner-top-left::after,
+body.comfort-mode .card-corner-bottom-right::before,
+body.comfort-mode .card-corner-bottom-right::after,
+body.comfort-mode .cyber-card::after {
     display: none !important;
+}
+
+/* Text and details */
+body.comfort-mode .card-desc,
+body.comfort-mode .meta-val,
+body.comfort-mode .meta-label,
+body.comfort-mode .log-desc,
+body.comfort-mode .log-bullets li,
+body.comfort-mode .edu-meta,
+body.comfort-mode .edu-desc,
+body.comfort-mode .lab-note,
+body.comfort-mode .thm-note,
+body.comfort-mode .thm-label {
+    color: #334155 !important;
+}
+
+body.comfort-mode .log-bullets li::marker {
+    color: #1d4ed8 !important;
+}
+
+body.comfort-mode .log-org {
+    color: #64748b !important;
+}
+
+body.comfort-mode .log-title,
+body.comfort-mode .edu-info strong,
+body.comfort-mode .skill-name,
+body.comfort-mode .skill-val {
+    color: #0f172a !important;
+}
+
+body.comfort-mode .text-accent-cyan,
+body.comfort-mode .text-accent-green {
+    color: #1e3a8a !important;
+}
+
+body.comfort-mode .badge-cyber {
+    background: #e0f2fe !important;
+    color: #0369a1 !important;
+    border-color: #bae6fd !important;
+}
+
+body.comfort-mode .mindset-tag {
+    background: #f8fafc !important;
+    border: 1px solid #e2e8f0 !important;
+    color: #475569 !important;
+}
+body.comfort-mode .mindset-tag:hover {
+    background: #f1f5f9 !important;
+    border-color: #1d4ed8 !important;
+    color: #0f172a !important;
+}
+
+/* Progress bars in comfort mode */
+body.comfort-mode .meter-bar {
+    background: #e2e8f0 !important;
+}
+body.comfort-mode .meter-fill {
+    background: #1d4ed8 !important; /* Solid blue progress bars */
+}
+
+/* Timeline specific overrides */
+body.comfort-mode .syslog-timeline {
+    border-left: 2px solid #e2e8f0 !important;
+}
+body.comfort-mode .log-entry::before {
+    background-color: #ffffff !important;
+    border-color: #cbd5e1 !important;
+}
+body.comfort-mode .log-entry:hover::before {
+    background-color: #1d4ed8 !important;
+    border-color: #1d4ed8 !important;
+}
+body.comfort-mode .log-timestamp {
+    color: #1d4ed8 !important;
+}
+body.comfort-mode .log-details {
+    background: #ffffff !important;
+    border: 1px solid #f1f5f9 !important;
+}
+body.comfort-mode .log-status {
+    border-color: #cbd5e1 !important;
+    color: #475569 !important;
+}
+
+body.comfort-mode .edu-node-compact {
+    background: #f8fafc !important;
+    border: 1px solid #e2e8f0 !important;
+}
+
+/* Schematic & THM overlays */
+body.comfort-mode .lab-schematic,
+body.comfort-mode .thm-panel {
+    background: #ffffff !important;
+    border: 1px solid #e2e8f0 !important;
+}
+body.comfort-mode .schematic-header {
+    border-bottom: 1px solid #f1f5f9 !important;
+}
+body.comfort-mode .schematic-list li strong {
+    color: #0f172a !important;
+}
+
+body.comfort-mode .thm-status {
+    background: #f8fafc !important;
+    border: 1px solid #e2e8f0 !important;
+}
+body.comfort-mode .thm-val {
+    color: #1d4ed8 !important;
+    text-shadow: none !important;
+}
+body.comfort-mode .thm-objectives h4 {
+    color: #0f172a !important;
+}
+body.comfort-mode .thm-list li {
+    color: #334155 !important;
+}
+body.comfort-mode .t-bullet {
+    color: #1d4ed8 !important;
+}
+
+/* Contact form overrides */
+body.comfort-mode .contact-details,
+body.comfort-mode .contact-form {
+    background: #ffffff !important;
+}
+body.comfort-mode .contact-form input,
+body.comfort-mode .contact-form textarea {
+    background: #f8fafc !important;
+    border: 1px solid #cbd5e1 !important;
+    color: #1e293b !important;
+}
+body.comfort-mode .contact-form input:focus,
+body.comfort-mode .contact-form textarea:focus {
+    border-color: #1d4ed8 !important;
+    box-shadow: 0 0 0 3px rgba(29, 78, 216, 0.15) !important;
+}
+body.comfort-mode .contact-form label {
+    color: #475569 !important;
+}
+body.comfort-mode .pgp-key-block {
+    background: #f8fafc !important;
+    border-left: 3px solid #cbd5e1 !important;
+}
+body.comfort-mode .pgp-key {
+    color: #475569 !important;
+}
+
+body.comfort-mode .cyber-btn {
+    background: #1d4ed8 !important;
+    color: #ffffff !important;
+    border: none !important;
+    box-shadow: 0 2px 4px rgba(29, 78, 216, 0.2) !important;
+}
+body.comfort-mode .cyber-btn:hover {
+    background: #1e40af !important;
+    box-shadow: 0 4px 8px rgba(29, 78, 216, 0.3) !important;
+}
+body.comfort-mode .cyber-btn .btn-scanner,
+body.comfort-mode .cyber-btn .btn-glitch {
+    display: none !important;
+}
+
+/* Side navigation override */
+body.comfort-mode .slide-nav a {
+    border-color: #cbd5e1 !important;
+}
+body.comfort-mode .slide-nav a.active {
+    background-color: #1d4ed8 !important;
+    border-color: #1d4ed8 !important;
+    box-shadow: 0 0 8px rgba(29, 78, 216, 0.4) !important;
+}
+body.comfort-mode .slide-nav a:hover {
+    border-color: #1d4ed8 !important;
+}
+
+/* Glitch title in comfort mode */
+body.comfort-mode .glitch-title {
+    color: #0f172a !important;
+}
+
+/* Footer override */
+body.comfort-mode .cyber-footer {
+    border-top: 1px solid #e2e8f0 !important;
+    background: #ffffff !important;
+    color: #64748b !important;
 }
 
 body.comfort-mode .reveal-element {
